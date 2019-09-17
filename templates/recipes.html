@@ -1,11 +1,13 @@
-<html>
+{% extends "base.html" %}
+  {% block content %} 
+
     <head>
         
     </head>
 <body>
     
     
-    {% for drink in drinks_list %}
+    {% for drink in drinks %}
     
     {{drink.name}}
     {{drink.base_spirit}}
@@ -15,7 +17,6 @@
     {% endfor %}
     
 </body>
+{% endblock %}
 
 
-
-</html>
