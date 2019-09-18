@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Booze Bible </title>
     
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-clean-blog/5.0.8/css/clean-blog.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/clean-blog.min.css') }}" type="text/css" />
+   
 </head>
 <body>
+    <div class="navbar">
+        
+        
+    </div>
+    
     
       {% block content %} 
       {% endblock %}
