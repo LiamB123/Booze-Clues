@@ -28,7 +28,9 @@ def get_recipes():
 def add_recipe():
     return render_template('add_recipe.html', spirits=mongo.db.spirits.find())
     
-    
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
     
 if __name__ == '__main__':

@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -9,15 +10,7 @@
             <form name="sentMessage" id="contactForm" novalidate>
 
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">poll</i>
-                        <select id="spirit" name="spirit_name">
-                  <option value="" disabled selected>Choose base Spirit </option>
-                  {% for spirit in spirit %}
-                      <option value="{{spirit.spirit_name}}">{{spirit.spirit_name}}</option>
-                  {% endfor %}
-                </select>
+               
 
 
                         <div class="control-group">
@@ -58,5 +51,4 @@
             </div>
         </div>
 
-
-        {% endblock %}
+{% endblock %}
