@@ -23,6 +23,12 @@ def home():
 def get_recipes():
     return render_template("recipes.html", drinks_list=mongo.db.drinks_list.find())
     
+    
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('add_recipe.html', spirits=mongo.db.spirits.find())
+    
+    
 
     
 if __name__ == '__main__':
