@@ -4,11 +4,23 @@
 
     
     {% for drink in drinks_list %}
+  
+   <div class="row col-6"> What's the Cocktail?
     
       {{drink.name}}
+      </div>
+      <hr>
+       <div class="row col-10">Whats my Base Spirit?
+       </div>
+     
       {{drink.base_spirit}}
+      <hr>
+       <div class="row col-6">How do i make it?
+       </div>
+      
+      
       {{drink.method}}
-    
+    <hr>
     
     {% endfor %}
     
