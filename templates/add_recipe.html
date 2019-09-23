@@ -7,7 +7,7 @@
             <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
             <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
             <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form name="sentMessage" id="contactForm" action="{{ url_for('insert_recipe') }}" method="POST" novalidate>
 
 
                
@@ -16,35 +16,42 @@
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls">
                                 <label>Drink Name </label>
-                                <input type="text" class="form-control" placeholder="Drink Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" placeholder="Drink Name" name="name"id="name" required data-validation-required-message="Please enter the Drinks name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls">
                                 <label>Base Spirit</label>
-                                <input type="text" class="form-control" placeholder="Base Spirit" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="text" class="form-control" placeholder="Base Spirit" id="base_spirit" name="base_spirit" required data-validation-required-message="Please enter your Base Spirit">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Equipment? </label>
-                                <input type="tel" class="form-control" placeholder="Tin? Shaker? Strainers?" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <input type="text" class="form-control" placeholder="Tin? Shaker? Strainers?" id="equipment" name="equipment" required data-validation-required-message="Please enter the equipment needed.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Ingredients</label>
+                                <input type="text" class="form-control" placeholder="Ingredients" id="ingredients" name="ingredients" required data-validation-required-message="Please enter your ingredients">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls">
                                 <label>Method</label>
-                                <textarea rows="5" class="form-control" placeholder="Method" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <textarea rows="5" class="form-control" placeholder="Method" id="method" name="method" required data-validation-required-message="Please enter the method!"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <br>
                         <div id="success"></div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+                            <button type="submit" class="btn btn-primary" id="sendMessageButton" name="action">Send</button>
                         </div>
             </form>
             </div>

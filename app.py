@@ -28,6 +28,12 @@ def get_recipes():
 def add_recipe():
     return render_template('add_recipe.html', spirits=mongo.db.spirits.find())
     
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    drinks_list=mongo.db.drinks_list
+    drinks_list.insert_one(request.form.to_dict())
+    return redirect(url_for('get_recipes'))
+    
 @app.route('/about')
 def about():
     return render_template('about.html')
