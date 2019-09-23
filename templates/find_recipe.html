@@ -1,0 +1,12 @@
+ {% extends 'base.html'%}
+ {% for drinks in drinks_list%}
+    <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{drink.name}}</h5>
+    <p class="card-text">{{drink.base_spirit}}</p>
+    <a href="#" class="btn btn-primary">Go to recipe!</a>
+  </div>
+</div>
+
+{% endfor %}

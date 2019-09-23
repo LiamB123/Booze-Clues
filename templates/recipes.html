@@ -5,22 +5,24 @@
     
     {% for drink in drinks_list %}
   
-   <div class="row col-6"> What's the Cocktail?
-    
+  <div class="col">
+   <div class="row col-12 "> What's the Cocktail?
+    </div>
       {{drink.name}}
-      </div>
+     
       <hr>
-       <div class="row col-10">Whats my Base Spirit?
+       <div class="row col-12">Whats my Base Spirit?
        </div>
      
       {{drink.base_spirit}}
       <hr>
-       <div class="row col-6">How do i make it?
+       <div class="row col-12">How do i make it?
        </div>
       
       
       {{drink.method}}
     <hr>
+    </div>
     
     {% endfor %}
     

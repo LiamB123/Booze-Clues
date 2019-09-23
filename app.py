@@ -34,6 +34,14 @@ def insert_recipe():
     drinks_list.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
     
+    
+@app.route('/edit_recipe/<task_id>')
+def edit_recipe(task_id):
+    the_recipe =  mongo.db.drinks_list.find_one({"_id": ObjectId(task_id)})
+    all_spirits =  mongo.db.spirits.find()
+    return render_template('edit_recipe.html', drinks_list=the_recipe,
+                           spirits=all_spirits)
+    
 @app.route('/about')
 def about():
     return render_template('about.html')
