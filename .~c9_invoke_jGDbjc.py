@@ -43,18 +43,20 @@ def edit_recipe(recipe_id):
                            spirit=all_spirits)
                            
                          
-@app.route('/update_recipe/<recipe_id>', methods=['POST'])
+@app.route('/update_recipe/<recipe_id>' methods=['POST'])
 def update_recipe(recipe_id):
     drinks_list=mongo.db.drinks_list
     drinks_list.update({'_id':ObjectId(recipe_id)},
     {
         'name':request.form.get('name'),
-        'base_spirit':request.form.get('base_spirit'),
-        'equipment': request.form.get('equipment'),
-        'ingredients': request.form.get('ingredients'),
-        'method':request.form.get('method')
-    })
-    return redirect (url_for('get_recipes'))
+        ':request.form.get('category_name'),
+        'task_description': request.form.get('task_description'),
+        'due_date': request.form.get('due_date'),
+        'is_urgent':request.form.get('is_urgent')
+    }
+        )
+    
+    return render_template()
     
 @app.route('/about')
 def about():

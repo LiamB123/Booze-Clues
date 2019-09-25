@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-10 col-md-10 mx-auto">
             <p>Edit Recipe</p>
-             <form name="sentMessage" id="contactForm" action="{{ url_for('insert_recipe') }}" method="POST">
+             <form name="sentMessage" id="contactForm" action="{{ url_for('update_recipe', recipe_id=drinks_list._id) }}" method="POST">
 
 
                 
@@ -13,7 +13,8 @@
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls" required >
                                 <label>Drink Name </label>
-                                <input type="text" class="form-control required" placeholder="Drink Name" name="name" id="name" required data-validation-required-message="Please enter the Drinks name." value="{{drinks_list.name}}">
+                                <input type="text" class="form-control required" placeholder="Drink Name" name="name" id="name" required data-validation-required-message="Please enter the Drinks name.">
+                             
                                 <p class="help-block text-danger" >
                                 
                                 </p>
@@ -22,7 +23,7 @@
                         <div class="control-group"> 
                             <div class="form-group floating-label-form-group controls">
                                 <label>Base Spirit</label>
-                                <input type="text" class="form-control" placeholder="Base Spirit" id="base_spirit" name="base_spirit" required data-validation-required-message="Please enter your Base Spirit" value="{{drink.base_spirit}}">
+                                <input type="text" class="form-control" placeholder="Base Spirit" id="base_spirit" name="base_spirit" required data-validation-required-message="Please enter your Base Spirit">
                                 <p class="help-block text-danger" ></p>
                             </div>
                         </div>
