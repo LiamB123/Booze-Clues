@@ -5,28 +5,40 @@
     
     {% for drink in drinks_list %}
   
-  <div class="col">
-   <div class="row col-12 "> What's the Cocktail?
+
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h3 class="mb-0">
+        <button class="lrg-btn btn-block btn-outline-dark item-align-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          {{drink.name}}
+        </button>
+      </h3>
     </div>
-      {{drink.name}}
-     
-      <hr>
-       <div class="row col-12">Whats my Base Spirit?
-       </div>
-     
-      {{drink.base_spirit}}
-      <hr>
-       <div class="row col-12">How do i make it?
-       </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body"><h4>
+          Whats the base spirit?<hr>
+          {{drink.base_spirit}}<hr>
+          Ingredients?<hr>
+          {{drink.ingredients}}<hr>
+          Method?<hr>
+          {{drink.method}}
+          </h4></div>
+          
+          
+    </div>
+  </div>
       
       
-      {{drink.method}}
-    <hr>
-    </div>
-    
+   
+      
+      
+      
     {% endfor %}
     
 
   {% endblock %}
 
-
+$('.collapse').collapse()
