@@ -1,50 +1,44 @@
-{% extends 'base.html' %}
-  {% block content %} 
+{% extends 'base.html' %} {% block content %} {% for drink in drinks_list %}
 
-
-    
-    {% for drink in drinks_list %}
-  
 
 
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h3 class="mb-0">
-        <button class="lrg-btn btn-block btn-outline-dark item-align-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <button class="lrg-btn btn-block btn-outline-dark item-align-center" data-toggle="collapsed" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           {{drink.name}}
         </button>
       </h3>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body"><h4>
-          Whats the base spirit?<hr>
-          {{drink.base_spirit}}<hr>
-          Ingredients?<hr>
-          {{drink.ingredients}}<hr>
-          Method?<hr>
-          {{drink.method}}
-          </h4>
-         <hr>
-            <div class="row btn-block">
-          <a href="{{url_for('edit_recipe', recipe_id=drink._id)}}" class ="btn btn-dark">Edit</a>
-          <a href="{{url_for('delete_recipe', recipe_id=drink._id)}}" class ="btn btn-outline-dark">Delete</a>
-         </div>
-          </div>
-          
-          
+      <div class="card-body">
+        <h4 class="grey">
+          Whats the base spirit?
+          <hr> {{drink.base_spirit}}
+          <hr> Ingredients?
+          <hr> {{drink.ingredients}}
+          <hr> Method?
+          <hr> {{drink.method}}
+        </h4>
+        <hr>
+        <div class="row btn-block">
+          <a href="{{url_for('edit_recipe', recipe_id=drink._id)}}" class="btn btn-dark">Edit</a>
+          <a href="{{url_for('delete_recipe', recipe_id=drink._id)}}" class="btn btn-outline-dark">Delete</a>
+        </div>
+      </div>
+      
+      
+      
+
+
     </div>
   </div>
-      
-      
-   
-      
-      
-      
-    {% endfor %}
-    
 
-  {% endblock %}
 
-$('.collapse').collapse()
+
+
+
+
+  {% endfor %} {% endblock %} $('.collapse').collapse()
