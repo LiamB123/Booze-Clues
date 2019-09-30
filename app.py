@@ -66,6 +66,10 @@ def delete_recipe(recipe_id):
 @app.route('/about')
 def about():
     return render_template('about.html')
+    
+@app.route('/shop')
+def find_shop():
+    return render_template('shop.html')
 
     
 if __name__ == '__main__':
