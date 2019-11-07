@@ -11,10 +11,7 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
-
-
-
-
+@app.route('/')
 @app.route('/home')
 def home():
     return render_template("home.html")
@@ -29,8 +26,6 @@ def get_recipes():
 def add_recipe():
     return render_template('add_recipe.html', spirits=mongo.db.spirits.find())
     
-    
-@app.route('/')
 
 
 @app.route('/insert_recipe', methods=['POST'])
